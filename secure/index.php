@@ -28,11 +28,11 @@ Any authenticated user can visit this page <br>
 
 <p>
 <?php
-phpinfo();
 $attrs = ['UserName','FirstName','LastName','NickName','Role'];
 foreach ($attrs as $attr) {
-	if ($_SERVER[$attr]) {
-		echo "$attr is: $_SERVER[$attr]";
+	$sattr = strtoupper($attr);
+	if ($_SERVER[$sattr]) {
+		echo "$attr is: $_SERVER[$sattr]";
 	} else {
 		echo "*** $attr is not found - Looking for header attribute - $attr ***";
 	}
