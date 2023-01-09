@@ -25,7 +25,15 @@ Any user can visit this page, but if the user is already authenticated the page 
 <br>
 
 <p>
- Welcome: <p>
+<?php
+if ($_SERVER['HTTP_USERNAME']) {
+	$user = $_SERVER['HTTP_USERNAME'];
+	echo "Welcome: $user <p>";
+} else {
+	echo "You are not logged in. <p>";
+}
+?>
+<a href="env.php"> Show HTTP request headers</a> <p>
 <a href="../"> Return to Public Page</a> <p>
 
 
