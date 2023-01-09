@@ -25,7 +25,19 @@ Only users in an okta administrator role can visit this page<br>
 <br>
 
 <p>
-*** UserName is not found - Looking for header attribute - UserName *** <p>*** FirstName is not found - Looking for header attribute - FirstName ***<p>*** LastName is not found - Looking for header attribute - LastName ***<p>*** NickName is not found - Looking for header attribute - NickName ***<p>*** Role is not found - Looking for header attribute - Role ***<p>
+<?php
+$attrs = ['UserName','FirstName','LastName','NickName','Role'];
+foreach ($attrs as $attr) {
+        $sattr = "HTTP_" . strtoupper($attr);
+        if ($_SERVER[$sattr]) {
+                echo "$attr is: $_SERVER[$sattr]";
+        } else {
+                echo "*** $attr is not found - Looking for header attribute - $attr ***";
+        }
+        echo "<p>";
+}
+?>
+
 
 <p>
 <br>
