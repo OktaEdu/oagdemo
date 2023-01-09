@@ -28,6 +28,7 @@ Any authenticated user can visit this page <br>
 
 <p>
 <?php
+phpinfo();
 $attrs = ['UserName','FirstName','LastName','NickName','Role'];
 foreach ($attrs as $attr) {
 	if ($_SERVER[$attr]) {
