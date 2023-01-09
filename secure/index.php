@@ -27,7 +27,17 @@ Any authenticated user can visit this page <br>
 <br>
 
 <p>
-*** UserName is not found - Looking for header attribute - UserName *** <p>*** FirstName is not found - Looking for header attribute - FirstName ***<p>*** LastName is not found - Looking for header attribute - LastName ***<p>*** NickName is not found - Looking for header attribute - NickName ***<p>*** Role is not found - Looking for header attribute - Role ***<p>
+<?php
+$attrs = ['UserName','FirstName','LastName','NickName','Role'];
+foreach ($attrs as $attr) {
+	if ($_SERVER[$attr]) {
+		echo "$attr is: $_SERVER[$attr]";
+	} else {
+		echo "*** $attr is not found - Looking for header attribute - $attr ***";
+	}
+	echo "<p>";
+}
+?>
 <a href="../admin/"> Go To Admin Page</a> <p>
 <a href="../"> Return to Public Page</a> <p>
 </div>
