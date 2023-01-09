@@ -21,7 +21,14 @@
 <p>
 
 	
-***   You just bypassed the Gateway *** <p>
+<?php
+if ($_SERVER['HTTP_FORWARDED']) {
+	echo "*** You are going through the Gateway ***";
+} else {
+	echo " ***   You just bypassed the Gateway ***";
+}
+?>
+<p>
  	
 	<p><a href="redirect.php">HTTP Redirect Test</a> This test demonstrates URL re-writing when a 302 redirect comes from the backend web server</p>
 	
