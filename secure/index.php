@@ -30,7 +30,7 @@ Any authenticated user can visit this page <br>
 <?php
 $attrs = ['UserName','FirstName','LastName','NickName','Role'];
 foreach ($attrs as $attr) {
-	$sattr = strtoupper($attr);
+	$sattr = "HTTP_" . strtoupper($attr);
 	if ($_SERVER[$sattr]) {
 		echo "$attr is: $_SERVER[$sattr]";
 	} else {
