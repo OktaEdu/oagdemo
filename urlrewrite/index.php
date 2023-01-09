@@ -32,7 +32,7 @@ if ($_SERVER['HTTP_FORWARDED']) {
  	
 	<p><a href="redirect.php">HTTP Redirect Test</a> This test demonstrates URL re-writing when a 302 redirect comes from the backend web server</p>
 	
-	<p><a href="landing.php">Content Rewrite Test</a> This test demonstrates URL Re-writing when the backend web server has a absolute link to the server name</p>
+	<p><a href="https://oagdemo.herokuapp.com/urlrewrite/landing.php">Content Rewrite Test</a> This test demonstrates URL Re-writing when the backend web server has a absolute link to the server name</p>
 <p>
 <br><p>
     <a href="../"> Return to Public Page</a> <p>
