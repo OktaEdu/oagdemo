@@ -14,7 +14,13 @@
  <div class="content">
     <h2>Okta Acccess Gateway 201 Redirect App Landing Page</h2>
 
-***   You just bypassed the Gateway *** <p>
+<?php
+if ($_SERVER['HTTP_FORWARDED']) {
+        echo "*** You are going through the Gateway ***";
+} else {
+        echo " ***   You just bypassed the Gateway ***";
+}
+?>
 
 
 
