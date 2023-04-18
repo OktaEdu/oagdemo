@@ -32,6 +32,10 @@ if ($_SERVER['HTTP_USERNAME']) {
 } else {
 	echo "You are not logged in. <p>";
 }
+if ($_SERVER['HTTP_X_REAL_IP']) {
+	$ip = $_SERVER['HTTP_X_REAL_IP'];
+	echo "Your IP Address: $ip <p>";
+}
 ?>
 <a href="env.php"> Show HTTP request headers</a> <p>
 <a href="../"> Return to Public Page</a> <p>
