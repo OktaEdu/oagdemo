@@ -30,7 +30,12 @@ if ($_SERVER['HTTP_USERNAME']) {
 	$user = $_SERVER['HTTP_USERNAME'];
 	echo "Welcome: $user <p>";
 } else {
-	echo "You are not logged in. <p>";
+	if ($_SERVER['HTTP_USER_NAME']) {
+		$user = $_SERVER['HTTP_USER_NAME'];
+		echo "Welcome: $user <p>";
+	} else {
+		echo "You are not logged in. <p>";
+	}
 }
 if ($_SERVER['HTTP_X_REAL_IP']) {
 	$ip = $_SERVER['HTTP_X_REAL_IP'];
