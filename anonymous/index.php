@@ -26,16 +26,11 @@ Any user can visit this page, but if the user is already authenticated the page 
 
 <p>
 <?php
-if ($_SERVER['HTTP_USERNAME']) {
-	$user = $_SERVER['HTTP_USERNAME'];
+if ($_SERVER['HTTP_ANONUSER']) {
+	$user = $_SERVER['HTTP_ANONUSER'];
 	echo "Welcome: $user <p>";
 } else {
-	if ($_SERVER['HTTP_USER_NAME']) {
-		$user = $_SERVER['HTTP_USER_NAME'];
-		echo "Welcome: $user <p>";
-	} else {
-		echo "You are not logged in. <p>";
-	}
+	echo "You are not logged in. <p>";
 }
 if ($_SERVER['HTTP_X_REAL_IP']) {
 	$ip = $_SERVER['HTTP_X_REAL_IP'];
