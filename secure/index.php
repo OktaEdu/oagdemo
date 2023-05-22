@@ -28,7 +28,7 @@ Any authenticated user can visit this page <br>
 
 <p>
 <?php
-$attrs = ['UserName','FirstName','LastName','NickName','Role'];
+$attrs = ['oagUserName','FirstName','LastName','NickName','Role'];
 foreach ($attrs as $attr) {
 	$sattr = "HTTP_" . strtoupper($attr);
 	if ($_SERVER[$sattr]) {
